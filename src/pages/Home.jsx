@@ -1,17 +1,17 @@
 const Home = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-1">
+      <div className="grid grid-cols-2 space-x-0 justify my-5">
         {/* left card */}
-        <div className="h-[16em] w-[18em] border-2 border-lime-200 rounded-[1.5em] bg-gradient-to-br from-lime-100 to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] my-5">
-          <div className="px-2 py-4">
+        <div className="h-[32em] w-[36em] border-2 border-lime-200 rounded-[1.5em] bg-gradient-to-br from-lime-100 to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] ">
+          <div className="px-2 py-2">
             <h1 className="text-[2em] font-medium">Heading</h1>
             <p className="text-[0.85em]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
               dolorum blanditiis pariatur sequi magni.
             </p>
           </div>
-          <button className="h-fit w-fit px-[1em] py-[0.25em] border-[1px] rounded-full flex justify-center items-center gap-[0.5em] overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
+          <button className=" h-fit w-fit px-[1em] py-[0.25em] border-[1px] rounded-full flex justify-center items-center gap-[1em] overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
             <p>Button</p>
             <svg
               className="w-6 h-6 group-hover:translate-x-[10%] duration-300"
@@ -32,7 +32,7 @@ const Home = () => {
 
         {/* right card */}
 
-        <div className="w-800 h-[32rem] row-span-2 mt-5 mb-5 mr-5 shadow-[15px_15px_30px_rgb(25,25,25),-15px_-15px_30px_rgb(60,60,60)] rounded-[30px] bg-lime-800 flex flex-col justify-between">
+        <div className="w-800 h-[50rem] shadow-[15px_15px_30px_rgb(25,25,25),-15px_-15px_30px_rgb(60,60,60)] rounded-[30px] bg-lime-800 flex flex-col justify-between">
           <div className="px-5 py-5">
             <h1 className="text-[2em] font-medium">Heading</h1>
             <p className="text-[0.85em]">
