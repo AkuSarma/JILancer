@@ -11,7 +11,7 @@ import SignUp from './pages/SignUp';
 function App() {
 
   return (
-    <div className="app">
+    <div className="app bg-backgroundColor">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        navbarGreen: "#9CA986",
+        primaryColor: "#9CA986",
+        backgroundColor: "#C9DABF",
+        secondaryColor: "#808D7C",
+        lastColor: "#5F6F65",
       },
     },
   },
