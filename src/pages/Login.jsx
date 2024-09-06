@@ -11,6 +11,7 @@ const Login = () => {
     console.log("Password:", password);
   };
 
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
@@ -52,7 +53,8 @@ const Login = () => {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Don't have an account?{" "}
-            <a href="#" className="text-indigo-500 hover:underline">
+            <a 
+            href="/SignUp" className="text-indigo-500 hover:underline">
               Sign up
             </a>
           </p>
