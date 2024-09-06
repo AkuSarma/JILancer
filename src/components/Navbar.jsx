@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
+  // const navigate = useNavigate;
+
+  // const sumbit = (e) =>{
+  //   e.preventDefault();
+  //   navigate('/Auth')
+  // }
   return (
     <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl">
       <div className="flex items-center space-x-4">
@@ -24,9 +31,8 @@ const Navbar = () => {
       </div>
       <div className="flex space-x-4">
         <button className="text-white hover:text-gray-800">
-          <Link to="/login">Login</Link>
+          <Link to="/Auth" >Login</Link>
         </button>
-       
       </div>
     </div>
   );

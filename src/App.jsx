@@ -5,8 +5,10 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import NoPage from './pages/NoPage';
 import Contact from './pages/Contact';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+
+
+
+import AuthContainer from './pages/AuthContainer';
 
 function App() {
 
@@ -18,13 +20,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
+            < Route path='/Auth' element={<AuthContainer/>}/>
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </div>
+    
   );
 }
 
