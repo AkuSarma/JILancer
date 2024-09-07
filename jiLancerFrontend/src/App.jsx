@@ -15,30 +15,32 @@ import AuthContainer from './pages/AuthContainer';
 function App() {
   const [user, setUser] = useState(null);
 
-  const checkLoginStatus = async () => {
-    try {
-      const response = await axios.get(
-        "http://localhost:8000/user_authentication/status",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Ensure this is the correct token
-          },
-        }
-      );
+ useEffect(() => {
+   const checkLoginStatus = async () => {
+     try {
+       const token = localStorage.getItem("access_token");
+       const response = await axios.get(
+         "http://localhost:8000/user_authentication/status/",
+         {
+           headers: {
+             Authorization: `Bearer ${token}`,
+           },
+         }
+       );
 
-      if (response.data.is_authenticated) {
-        // User is logged in, handle the response
-        setUser(response.data.user);
-      } else {
-        // User is not logged in
-        setUser(null)
-      }
-    } catch (error) {
-      console.error("Error checking login status:", error);
-    }
-  };
+       if (response.data.is_authenticated) {
+         setUser(response.data.username);
+       } else {
+         setUser(null);
+       }
+     } catch (error) {
+       console.error("Error checking login status:", error);
+       setUser(null);
+     }
+   };
 
-  // checkLoginStatus();
+   checkLoginStatus();
+ }, []);
 
   return (
     <div className="app bg-backgroundColor">

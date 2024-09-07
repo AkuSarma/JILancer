@@ -25,6 +25,8 @@ class RegisterView(APIView):
 
 @csrf_exempt
 def login_user(request):
+    print("login user")
+    print(request)
     if request.method == 'POST':
         data = json.loads(request.body)
         username = data.get('username')
@@ -50,8 +52,11 @@ def logout_user(request):
     else:
         return JsonResponse({"error": "Invalid request method"}, status=405)
 
+
 @api_view(['GET'])
 def user_status(request):
+    print("user status check")
+    print(request)
     if request.user.is_authenticated:
         return Response({
             'is_authenticated': True,

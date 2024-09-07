@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = ({ toggleForms }) => {
+  const navigate = useNavigate();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -26,6 +28,7 @@ const SignUp = ({ toggleForms }) => {
            is_freelancer: isFreelancer,
          }
        );
+       navigate("Auth?=true");
        console.log("Registration successful:", response.data);
      } catch (error) {
        console.error("Error during registration:", error);
