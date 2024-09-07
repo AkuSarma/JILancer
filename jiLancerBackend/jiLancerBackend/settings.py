@@ -27,6 +27,30 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Application definition
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # Add your React frontend's URL here
+]
+
+AUTH_USER_MODEL = 'user_authentication.CustomUser'
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
+CORS_ALLOW_HEADERS = [
+    'authorization',
+    'content-type',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+
 
 # Application definition
 
@@ -37,9 +61,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # installed apps
+    'rest_framework',
+    'user_authentication.apps.UserAuthenticationConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Add this line
+    
+    # pre defined
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
