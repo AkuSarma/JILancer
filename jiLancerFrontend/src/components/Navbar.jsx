@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const {user} = props
   // const navigate = useNavigate;
 
   // const sumbit = (e) =>{
@@ -31,7 +32,11 @@ const Navbar = () => {
       </div>
       <div className="flex space-x-4">
         <button className="text-white hover:text-gray-800">
-          <Link to="/Auth" >Login</Link>
+          {user ? (
+            {user}
+          ) : (
+            <Link to="/Auth">Login</Link>
+          )}
         </button>
       </div>
     </div>

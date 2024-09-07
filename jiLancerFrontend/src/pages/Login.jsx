@@ -11,6 +11,25 @@ const LoginForm = ({ toggleForm }) => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const loginUser = async (username, password) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/user_authentication/token/",
+        {
+          username,
+          password,
+        }
+      );
+
+      const { access, refresh } = response.data;
+      // Store tokens in local storage or cookies
+      localStorage.setItem("access_token", access);
+      localStorage.setItem("refresh_token", refresh);
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
+  };
+
 
   const handleLogin = async () => {
     try {
@@ -22,6 +41,7 @@ const LoginForm = ({ toggleForm }) => {
         }
       );
       console.log("Login successful:", response.data);
+      loginUser(username, password)
     } catch (error) {
       console.error("Error during login:", error);
     }
