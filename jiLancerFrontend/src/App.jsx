@@ -18,6 +18,7 @@ function App() {
  useEffect(() => {
    const checkLoginStatus = async () => {
      try {
+      console.log("checking login status")
        const token = localStorage.getItem("access_token");
        const response = await axios.get(
          "http://localhost:8000/user_authentication/status/",

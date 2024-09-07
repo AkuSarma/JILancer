@@ -13,7 +13,6 @@ const LoginForm = ({ toggleForm }) => {
 
   const loginUser = async (username, password) => {
     try {
-      console.log("trying to make tokens")
       const response = await axios.post(
         "http://localhost:8000/user_authentication/token/",
         {
@@ -34,7 +33,6 @@ const LoginForm = ({ toggleForm }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("trying to login")
     try {
       const response = await axios.post(
         "http://localhost:8000/user_authentication/login/",

@@ -33,7 +33,7 @@ const Navbar = (props) => {
       <div className="flex space-x-4">
         <button className="text-white hover:text-gray-800">
           {user ? (
-            {user}
+            user
           ) : (
             <Link to="/Auth">Login</Link>
           )}
