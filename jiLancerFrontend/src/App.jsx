@@ -6,12 +6,12 @@ import Profile from './pages/Profile'
 import NoPage from './pages/NoPage';
 import Contact from './pages/Contact';
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 
 
 import AuthContainer from './pages/AuthContainer';
-import Dashboard from './pages/Dashboard';
+import RoleIdentifier from './pages/RoleIdentifier';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -48,23 +48,13 @@ function App() {
     <div className="app bg-backgroundColor">
       <BrowserRouter>
         <Routes>
-<<<<<<< HEAD
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/contact" element={<Contact />} />
-            < Route path='/Auth' element={<AuthContainer/>}/>
-            <Route path='/Dashboard' element={<Dashboard />} />
-           <Route path='/Client' element ={<App/>}/>
-            <Route path="*" element={<NoPage />} />
-=======
           <Route path="/" element={<Layout user={user} />}>
             <Route index element={<Home user={user} />} />
             <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/contact" element={<Contact user={user} />} />
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="*" element={<NoPage user={user} />} />
->>>>>>> 110326a61331f13ee752b5ebc4a225764e15e1a4
+            <Route path='/role' element ={<RoleIdentifier />}/>
           </Route>
         </Routes>
       </BrowserRouter>
