@@ -56,8 +56,8 @@ function App() {
             <Route path="/contact" element={<Contact user={user} />} />
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NoPage user={user} />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
+            <Route path="*" element={<NoPage user={user} />} />
           </Route>
         </Routes>
       </BrowserRouter>
