@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 
 
 import AuthContainer from './pages/AuthContainer';
+import Dashboard from './pages/Dashboard';
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
             < Route path='/Auth' element={<AuthContainer/>}/>
+            <Route path='/Dashboard' element={<Dashboard />} />
+           <Route path='/Client' element ={<App/>}/>
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

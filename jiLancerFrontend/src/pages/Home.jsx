@@ -2,8 +2,8 @@ import BelowHomePage from '../pages/BelowHomePage'
 
 const Home = () => {
   return (
-    <div>
-      <div className="grid grid-cols-2 space-x-0 justify my-5">
+    <div className='mx-20'>
+      <div className="grid grid-cols-2 space-x-0 justify my-5 ">
         {/* left card */}
         <div className="h-[32em] w-[36em] border- rounded-[1.5em] bg-primaryColor to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] ">
           <div className="px-2 py-2">

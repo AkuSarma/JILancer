@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { PolarArea } from 'react-chartjs-2';
 import { Chart, ArcElement, RadialLinearScale, Tooltip, Legend } from 'chart.js';
 
@@ -52,11 +52,11 @@ const FreelancerIncomeTracker = () => {
   };
 
   return (
-    <div className="p-5 w-[40rem] mx-20">
+    <div className="p-5">
       <h2 className="text-2xl font-bold mb-4">Freelancer Income Tracker</h2>
 
       {/* Polar Area Chart */}
-      <div className="bg-[#C9DABF] text-[#5F6F65] p-5 rounded-lg shadow-md w-auto h-auto">
+      <div className="bg-[#C9DABF] text-[#5F6F65] p-5 rounded-lg shadow-md">
         <PolarArea data={chartData} />
       </div>
 
