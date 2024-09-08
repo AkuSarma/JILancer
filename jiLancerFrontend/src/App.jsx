@@ -12,7 +12,12 @@ import  { useEffect, useState } from "react";
 
 
 import AuthContainer from './pages/AuthContainer';
+<<<<<<< HEAD
 import RoleIdentifier from './components/RoleIdentifier';
+=======
+import RoleIdentifier from './pages/RoleIdentifier';
+import IncomeChart from './components/Dashboard_Profile/IncomeChart';
+>>>>>>> cdf1c99cde92fab72e7dc80e73d05b6b2d21cbb4
 
 function App() {
   const [user, setUser] = useState(null);
@@ -57,7 +62,12 @@ function App() {
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
+<<<<<<< HEAD
+            <Route path='/chart' element ={<IncomeChart />}/>
+
+=======
             <Route path="*" element={<NoPage user={user} />} />
+>>>>>>> e8cd470ef3be8331219cadec0c4e5ae48fe1ffe2
           </Route>
         </Routes>
       </BrowserRouter>

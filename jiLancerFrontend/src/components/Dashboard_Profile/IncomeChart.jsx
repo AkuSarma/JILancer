@@ -1,90 +1,164 @@
 import { useState } from 'react';
-import { PolarArea } from 'react-chartjs-2';
-import { Chart, ArcElement, RadialLinearScale, Tooltip, Legend } from 'chart.js';
 
-// Register necessary components for the Polar Area chart
-Chart.register(ArcElement, RadialLinearScale, Tooltip, Legend);
+const IncomeChart = () => {
+  // State for selected time period
+  const [timePeriod, setTimePeriod] = useState('Last 7 days');
 
-const FreelancerIncomeTracker = () => {
-  const [incomeData, setIncomeData] = useState([]);
-  const [labels, setLabels] = useState([]);
-
-  // Function to add income data
-  const addIncome = (event) => {
-    event.preventDefault();
-    const project = event.target.project.value;
-    const income = parseFloat(event.target.income.value);
-
-    // Update chart data
-    setLabels([...labels, project]);
-    setIncomeData([...incomeData, income]);
-
-    // Reset the form
-    event.target.reset();
+  // Event handler for changing time period
+  const handleTimePeriodChange = (newPeriod) => {
+    setTimePeriod(newPeriod);
+    console.log(`Time period changed to: ${newPeriod}`);
   };
 
-  // Data for the Polar Area chart
-  const chartData = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Income',
-        data: incomeData,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',  // Red
-          'rgba(54, 162, 235, 0.5)',  // Blue
-          'rgba(255, 206, 86, 0.5)',  // Yellow
-          'rgba(75, 192, 192, 0.5)',  // Green
-          'rgba(153, 102, 255, 0.5)', // Purple
-          'rgba(255, 159, 64, 0.5)',  // Orange
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
+  // Event handler for "User Report" link click
+  const handleUserReportClick = () => {
+    // Example: Triggering user report action
+    console.log('Generating user report for', timePeriod);
   };
 
   return (
-    <div className="p-5">
-      <h2 className="text-2xl font-bold mb-4">Freelancer Income Tracker</h2>
-
-      {/* Polar Area Chart */}
-      <div className="bg-[#C9DABF] text-[#5F6F65] p-5 rounded-lg shadow-md">
-        <PolarArea data={chartData} />
+    <div>
+      <div className="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6 mx-20 my-10">
+        <div className="flex justify-between">
+          <div>
+            <h5 className="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">
+              32.4k
+            </h5>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              Users this week
+            </p>
+          </div>
+          <div className="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+            12%
+            <svg
+              className="w-3 h-3 ms-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 13V1m0 0L1 5m4-4 4 4"
+              />
+            </svg>
+          </div>
+        </div>
+        <div id="area-chart"></div>
+        <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+          <div className="flex justify-between items-center pt-5">
+            {/* Dropdown Button */}
+            <button
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="lastDaysdropdown"
+              data-dropdown-placement="bottom"
+              className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+              type="button"
+            >
+              {timePeriod}
+              <svg
+                className="w-2.5 m-2.5 ms-1.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            {/* Dropdown menu */}
+            <div
+              id="lastDaysdropdown"
+              className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul
+                className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => handleTimePeriodChange('Yesterday')}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Yesterday
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => handleTimePeriodChange('Today')}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Today
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => handleTimePeriodChange('Last 7 days')}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Last 7 days
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => handleTimePeriodChange('Last 30 days')}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Last 30 days
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    onClick={() => handleTimePeriodChange('Last 90 days')}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Last 90 days
+                  </a>
+                </li>
+              </ul>
+            </div>
+            {/* User Report Button */}
+            <a
+              href="#"
+              onClick={handleUserReportClick}
+              className="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500  hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2"
+            >
+              Users Report
+              <svg
+                className="w-2.5 h-2.5 ms-1.5 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-
-      {/* Input Form */}
-      <form onSubmit={addIncome} className="mt-4">
-        <input
-          type="text"
-          name="project"
-          placeholder="Project Name"
-          className="mr-2 p-2"
-          required
-        />
-        <input
-          type="number"
-          name="income"
-          placeholder="Income Earned"
-          className="mr-2 p-2"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-[#9CA986] text-white px-4 py-2 rounded-lg"
-        >
-          Add Income
-        </button>
-      </form>
     </div>
   );
 };
 
-export default FreelancerIncomeTracker;
+export default IncomeChart;
