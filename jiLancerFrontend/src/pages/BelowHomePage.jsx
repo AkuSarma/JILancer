@@ -8,7 +8,7 @@ const FreelanceServices = () => {
     },
     {
       text: "Freelancers from Fiverr help me scale my projects.",
-      img: "/path/to/your-image2.jpg",
+      img: {},
     },
     {
       text: "Great experience working with Fiverr for my business needs.",
@@ -46,9 +46,9 @@ const FreelanceServices = () => {
       </div>
 
       {/* Services Section */}
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 text-center">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-4 text-center ">
         {/* Web Development Card */}
-        <div className="bg-[#9CA986] p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-2xl">
+        <div className="h-[16rem] bg-[#9CA986] p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-2xl">
           <p className="text-white text-xl font-semibold">Web Development</p>
         </div>
 
@@ -72,7 +72,7 @@ const FreelanceServices = () => {
 
       {/*  */}
 
-      <div className="bg-[#C9DABF] p-6 rounded-lg shadow-lg w-auto mx-auto mt-5">
+      <div className="bg-lastColor p-6 rounded-lg shadow-lg w-auto mx-auto mt-5 h-auto">
         <h2 className="text-3xl font-bold text-[#5F6F65] mb-4">Testimonials</h2>
 
         {/* Testimonial Content */}

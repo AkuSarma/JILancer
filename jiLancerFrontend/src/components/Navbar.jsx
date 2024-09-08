@@ -11,7 +11,7 @@ const Navbar = (props) => {
   //   navigate('/Auth')
   // }
   return (
-    <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl">
+    <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl mx-20">
       <div className="flex items-center space-x-4">
         <span className="font-bold text-lg text-white">logo</span>
         <input
@@ -24,7 +24,7 @@ const Navbar = (props) => {
         <Link to="/" class="hover:text-white">
           Home
         </Link>
-        <Link to="/profile" class="hover:text-white">
+        <Link to="/Dashboard" class="hover:text-white">
           Profile
         </Link>
         <Link to="/contact" class="hover:text-white">
