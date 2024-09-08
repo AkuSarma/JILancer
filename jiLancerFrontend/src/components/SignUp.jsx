@@ -31,7 +31,8 @@ const SignUp = ({ toggleForms }) => {
            is_freelancer: isFreelancer,
          }
        );
-       navigate("/Auth");
+       setDetails(false);
+       navigate("/Auth?=false");
        console.log("Registration successful:", response.data);
      } catch (error) {
        console.error("Error during registration:", error);
