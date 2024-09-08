@@ -12,7 +12,6 @@ import React, { useEffect, useState } from "react";
 
 
 import AuthContainer from './pages/AuthContainer';
-import Dashboard from './pages/Dashboard';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,16 +49,6 @@ function App() {
     <div className="app bg-backgroundColor">
       <BrowserRouter>
         <Routes>
-<<<<<<< HEAD
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/contact" element={<Contact />} />
-            < Route path='/Auth' element={<AuthContainer/>}/>
-            <Route path='/Dashboard' element={<Dashboard />} />
-           <Route path='/Client' element ={<App/>}/>
-            <Route path="*" element={<NoPage />} />
-=======
           <Route path="/" element={<Layout user={user} />}>
             <Route index element={<Home user={user} />} />
             <Route path="/profile" element={<Profile user={user} />} />
@@ -67,7 +56,6 @@ function App() {
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage user={user} />} />
->>>>>>> 110326a61331f13ee752b5ebc4a225764e15e1a4
           </Route>
         </Routes>
       </BrowserRouter>
