@@ -13,6 +13,7 @@ import  { useEffect, useState } from "react";
 
 import AuthContainer from './pages/AuthContainer';
 import RoleIdentifier from './pages/RoleIdentifier';
+import IncomeChart from './components/Dashboard_Profile/IncomeChart';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -58,6 +59,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage user={user} />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
+            <Route path='/chart' element ={<IncomeChart />}/>
+
           </Route>
         </Routes>
       </BrowserRouter>

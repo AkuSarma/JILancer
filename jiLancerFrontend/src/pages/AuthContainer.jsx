@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import LoginForm from '../components/Login';
-import SignUp from '../components/SignUp';
+import { useState } from "react";
+import LoginForm from "../components/Login";
+import SignUp from "../components/SignUp";
 
 const AuthContainer = () => {
-  const [isLogin, setIsLogin] = useState(true);  // State to toggle between login and sign-up
+  const [isLogin, setIsLogin] = useState(true); // State to toggle between login and sign-up
 
   const toggleForms = () => {
-    setIsLogin(!isLogin);  // Switch between login and sign-up
+    setIsLogin(!isLogin); // Switch between login and sign-up
   };
 
   return (
-    <div >
-      <div >
+    <div>
+      <div>
         {isLogin ? (
           <LoginForm toggleForm={toggleForms} />
         ) : (

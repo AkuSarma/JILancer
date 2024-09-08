@@ -36,7 +36,7 @@ const SignUp = ({ toggleForms }) => {
    };
 
   return (
-    <div className="min-h-screen bg-gray-600 flex items-center justify-center">
+    <div className="h-[100%] bg-gray-600 flex items-center justify-center p-10 mx-40 my-10 border- rounded-3xl">
       <div className="bg-white p-8 rounded-3xl shadow-lg w-96 animate-fadeIn transition-transform transform duration-700 ease-out">
         <h1 className="text-3xl font-bold text-gray-600 mb-2">
           <span className="underline text-gray-700">Sign Up</span>
