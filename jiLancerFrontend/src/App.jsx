@@ -7,11 +7,12 @@ import NoPage from './pages/NoPage';
 import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard'
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 
 
 import AuthContainer from './pages/AuthContainer';
+import RoleIdentifier from './pages/RoleIdentifier';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -56,6 +57,7 @@ function App() {
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage user={user} />} />
+            <Route path='/role' element ={<RoleIdentifier />}/>
           </Route>
         </Routes>
       </BrowserRouter>
