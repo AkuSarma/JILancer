@@ -19,7 +19,7 @@ const SignUp = ({ toggleForms }) => {
    const [isFreelancer, setIsFreelancer] = useState(false);
 
    const handleSubmit = async (e) => {
-
+    console.log(isFreelancer)
      e.preventDefault();
      try {
        const response = await axios.post(
@@ -31,59 +31,67 @@ const SignUp = ({ toggleForms }) => {
            is_freelancer: isFreelancer,
          }
        );
-       navigate("Auth");
+       navigate("/Auth");
        console.log("Registration successful:", response.data);
      } catch (error) {
        console.error("Error during registration:", error);
      }
    };
 
-  return (
-    <div className="h-full flex justify-center items-center bg-lastColor rounded-lg py-10 px-8 my-4">
-      {/* Sign up section */}
-      <div className="w-1/2 p-10 flex flex-col justify-center bg-white text-primaryColor rounded-lg mx-2">
-        <h2 className="text-3xl font-bold text-green-800">Sign up</h2>
-        <p className="text-green-600 mb-6">
-          Welcome back! Please login to your account
-        </p>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Username"
-            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type={passwordVisible ? "text" : "password"}
-            placeholder="Password"
-            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type={passwordVisible ? "text" : "password"}
-            placeholder="Confirm password"
-            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
-          />
-          {/* Show password checkbox */}
-          <div className="flex items-center mb-6">
+  if (details == true){
+    return(
+      <RoleIdentifier
+        handleSubmit={handleSubmit}
+        setIsFreelancer={setIsFreelancer}
+      />
+    )
+  } else {
+    return (
+      <div className="h-full flex justify-center items-center bg-lastColor rounded-lg py-10 px-8 my-4">
+        {/* Sign up section */}
+        <div className="w-1/2 p-10 flex flex-col justify-center bg-white text-primaryColor rounded-lg mx-2">
+          <h2 className="text-3xl font-bold text-green-800">Sign up</h2>
+          <p className="text-green-600 mb-6">
+            Welcome back! Please login to your account
+          </p>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
-              type="checkbox"
-              id="showPassword"
-              className="mr-2"
-              checked={passwordVisible}
-              onChange={togglePasswordVisibility}
+              type="text"
+              placeholder="Username"
+              className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+              onChange={(e) => setUsername(e.target.value)}
             />
-            <label htmlFor="showPassword" className="text-gray-700">
-              Show Password
-            </label>
-          </div>
-          <div className="mb-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type={passwordVisible ? "text" : "password"}
+              placeholder="Password"
+              className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type={passwordVisible ? "text" : "password"}
+              placeholder="Confirm password"
+              className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+            />
+            {/* Show password checkbox */}
+            <div className="flex items-center mb-6">
+              <input
+                type="checkbox"
+                id="showPassword"
+                className="mr-2"
+                checked={passwordVisible}
+                onChange={togglePasswordVisibility}
+              />
+              <label htmlFor="showPassword" className="text-gray-700">
+                Show Password
+              </label>
+            </div>
+            {/* <div className="mb-4">
             <label htmlFor="isFreelancer" className="block text-gray-700 mb-2">
               Are you a freelancer?
             </label>
