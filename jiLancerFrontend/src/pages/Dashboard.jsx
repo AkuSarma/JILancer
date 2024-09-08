@@ -52,7 +52,7 @@ const FreelancerIncomeTracker = () => {
   };
 
   return (
-    <div className="p-5 w-[40rem] mx-20">
+    <div className="p-5 w-[40rem]">
       <h2 className="text-2xl font-bold mb-4">Freelancer Income Tracker</h2>
 
       {/* Polar Area Chart */}
