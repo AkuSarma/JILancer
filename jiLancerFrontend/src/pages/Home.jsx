@@ -3,9 +3,9 @@ import BelowHomePage from '../pages/BelowHomePage'
 const Home = () => {
   return (
     <div className=''>
-      <div className="grid grid-cols-2 space-x-0 justify my-5 ">
+      <div className="grid grid-cols-2 gap-2 space-x-0 justify my-5 ">
         {/* left card */}
-        <div className="h-[32em] w-[36em] border- rounded-[1.5em] bg-primaryColor to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] ">
+        <div className="h-auto w-auto border- rounded-[1.5em] bg-primaryColor to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] ">
           <div className="px-2 py-2">
             <h1 className="text-[2em] font-medium">Heading</h1>
             <p className="text-[0.85em]">
