@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logout from "./logout";
 
 
 const Navbar = (props) => {
@@ -32,13 +33,10 @@ const Navbar = (props) => {
       </div>
       <div className="flex space-x-4">
         <button className="text-white hover:text-gray-800">
-          {user ? (
-            user
-          ) : (
-            <Link to="/Auth">Login</Link>
-          )}
+          {user ? <span> user </span> : <Link to="/Auth">Login</Link>}
         </button>
       </div>
+          <Logout />
     </div>
   );
 }
