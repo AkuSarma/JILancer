@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import NoPage from './pages/NoPage';
 import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard'
 import axios from "axios";
 import  { useEffect, useState } from "react";
 
@@ -32,6 +33,7 @@ function App() {
 
        if (response.data.is_authenticated) {
          setUser(response.data.username);
+        console.log(user)
        } else {
          setUser(null);
        }
@@ -53,6 +55,7 @@ function App() {
             <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/contact" element={<Contact user={user} />} />
             <Route path="/Auth" element={<AuthContainer />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage user={user} />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
           </Route>

@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ toggleForm }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -25,6 +29,7 @@ const LoginForm = ({ toggleForm }) => {
       // Store tokens in local storage or cookies
       localStorage.setItem("access_token", access);
       localStorage.setItem("refresh_token", refresh);
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error logging in:", error);
     }
@@ -43,6 +48,7 @@ const LoginForm = ({ toggleForm }) => {
       );
       console.log("Login successful:", response.data);
       loginUser(username, password)
+      
     } catch (error) {
       console.error("Error during login:", error);
     }
