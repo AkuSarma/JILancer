@@ -12,7 +12,7 @@ import  { useEffect, useState } from "react";
 
 
 import AuthContainer from './pages/AuthContainer';
-import RoleIdentifier from './pages/RoleIdentifier';
+import RoleIdentifier from './components/RoleIdentifier';
 
 function App() {
   const [user, setUser] = useState(null);
