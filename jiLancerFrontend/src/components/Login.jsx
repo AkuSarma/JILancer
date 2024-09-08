@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ toggleForm }) => {
+  // Make sure to use `toggleForm` here
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
@@ -35,7 +35,6 @@ const LoginForm = ({ toggleForm }) => {
     }
   };
 
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -47,16 +46,14 @@ const LoginForm = ({ toggleForm }) => {
         }
       );
       console.log("Login successful:", response.data);
-      loginUser(username, password)
-      
+      loginUser(username, password);
     } catch (error) {
       console.error("Error during login:", error);
     }
   };
 
-
   return (
-    <div className="h-[100%] bg-gray-600 flex items-center justify-center p-20 mx-40 my-20 border- rounded-3xl">
+    <div className="min-h-screen bg-gray-600 flex items-center justify-center">
       <div className="bg-white p-8 rounded-3xl shadow-lg w-96 animate-fadeIn transition-transform transform duration-700 ease-out">
         <h1 className="text-3xl font-bold text-gray-600 mb-2">
           <span className="underline text-gray-700">Log in</span>
@@ -107,48 +104,20 @@ const LoginForm = ({ toggleForm }) => {
               Show Password
             </label>
           </div>
-
-          {/* Remember me and Forget password */}
-          <div className="flex items-center justify-between mb-6">
-            <label className="flex items-center text-gray-600">
-              <input type="checkbox" className="mr-2" />
-              Remember me
-            </label>
-            <a href="#" className="text-sm text-gray-600">
-              Forget Password?
-            </a>
-          </div>
-
-          {/* Submit Button */}
-          <div className="text-center">
-            <button
-              type="submit"
-              className="px-6 py-2 text-gray-700 bg-transparent border-2 border-gray-400 rounded-full hover:bg-gray-300 hover:text-white transition-transform transform hover:scale-105 duration-200 ease-in-out hover:animate-bounce"
-            >
-              Log in
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="mt-4 bg-primaryColor hover:bg-green-500 text-white p-3 rounded-full w-full"
+          >
+            Log in
+          </button>
         </form>
-
-        {/* Toggle between login and sign-up */}
-        <div className="text-center mt-4">
-          <p className="text-gray-600">
-            Dont have an account?
-            <button
-              onClick={toggleForm}
-              className="text-blue-500 underline ml-2 focus:outline-none"
-            >
-              Sign Up
-            </button>
-          </p>
-        </div>
       </div>
     </div>
   );
 };
 
 LoginForm.propTypes = {
-  toggleForm: PropTypes.func.isRequired,  // Define the expected type and that it's required
+  toggleForm: PropTypes.func.isRequired, // Define the expected type and that it's required
 };
 
 export default LoginForm;

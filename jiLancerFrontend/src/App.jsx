@@ -57,10 +57,13 @@ function App() {
             <Route path="/contact" element={<Contact user={user} />} />
             <Route path="/Auth" element={<AuthContainer />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NoPage user={user} />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
+<<<<<<< HEAD
             <Route path='/chart' element ={<IncomeChart />}/>
 
+=======
+            <Route path="*" element={<NoPage user={user} />} />
+>>>>>>> e8cd470ef3be8331219cadec0c4e5ae48fe1ffe2
           </Route>
         </Routes>
       </BrowserRouter>

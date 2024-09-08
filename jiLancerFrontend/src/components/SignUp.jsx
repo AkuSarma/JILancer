@@ -28,7 +28,7 @@ const SignUp = ({ toggleForms }) => {
            is_freelancer: isFreelancer,
          }
        );
-       navigate("Auth?=true");
+       navigate("Auth");
        console.log("Registration successful:", response.data);
      } catch (error) {
        console.error("Error during registration:", error);
@@ -36,6 +36,7 @@ const SignUp = ({ toggleForms }) => {
    };
 
   return (
+<<<<<<< HEAD
     <div className="h-[100%] bg-gray-600 flex items-center justify-center p-10 mx-40 my-10 border- rounded-3xl">
       <div className="bg-white p-8 rounded-3xl shadow-lg w-96 animate-fadeIn transition-transform transform duration-700 ease-out">
         <h1 className="text-3xl font-bold text-gray-600 mb-2">
@@ -43,63 +44,39 @@ const SignUp = ({ toggleForms }) => {
         </h1>
         <p className="text-gray-400 mb-6">
           Create a new account to get started
+=======
+    <div className="h-full flex justify-center items-center bg-lastColor rounded-lg py-10 px-8 my-4">
+      {/* Sign up section */}
+      <div className="w-1/2 p-10 flex flex-col justify-center bg-white text-primaryColor rounded-lg mx-2">
+        <h2 className="text-3xl font-bold text-green-800">Sign up</h2>
+        <p className="text-green-600 mb-6">
+          Welcome back! Please login to your account
+>>>>>>> e8cd470ef3be8331219cadec0c4e5ae48fe1ffe2
         </p>
-
-        <form onSubmit={handleSubmit}>
-          {/* Username Field */}
-          <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 mb-2">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              className="w-full px-4 py-2 rounded-full bg-backgroundColor text-gray-700 focus:transform focus:scale-105 transition-transform duration-200 ease-in-out"
-              placeholder="Enter your username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-
-          {/* Email Field */}
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full px-4 py-2 rounded-full bg-backgroundColor text-gray-700 focus:transform focus:scale-105 transition-transform duration-200 ease-in-out"
-              placeholder="Enter your email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-
-          {/* Password Field */}
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 mb-2">
-              Password
-            </label>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              id="password"
-              className="w-full px-4 py-2 rounded-full bg-backgroundColor text-gray-700 focus:transform focus:scale-105 transition-transform duration-200 ease-in-out"
-              placeholder="Enter your password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 mb-2">
-              Confirm Password
-            </label>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              id="password"
-              className="w-full px-4 py-2 rounded-full bg-backgroundColor text-gray-700 focus:transform focus:scale-105 transition-transform duration-200 ease-in-out"
-              placeholder="Enter your password"
-            />
-          </div>
-
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Password"
+            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Confirm password"
+            className="w-full p-3 rounded-full bg-primaryColor focus:outline-primaryColor focus:bg-white text-white focus:text-lastColor"
+          />
           {/* Show password checkbox */}
           <div className="flex items-center mb-6">
             <input
@@ -113,8 +90,6 @@ const SignUp = ({ toggleForms }) => {
               Show Password
             </label>
           </div>
-
-          {/* is Freelancer Field */}
           <div className="mb-4">
             <label htmlFor="isFreelancer" className="block text-gray-700 mb-2">
               Are you a freelancer?
@@ -127,30 +102,20 @@ const SignUp = ({ toggleForms }) => {
               onChange={() => setIsFreelancer(!isFreelancer)}
             />
           </div>
-
-          {/* Submit Button */}
-          <div className="text-center">
-            <button
-              type="submit"
-              className="px-6 py-2 text-gray-700 bg-transparent border-2 border-gray-400 rounded-full hover:bg-gray-300 hover:text-white transition-transform transform hover:scale-105 duration-200 ease-in-out hover:animate-bounce"
-            >
-              Sign Up
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="mt-4 bg-primaryColor hover:bg-green-500 text-white p-3 rounded-full w-full"
+          >
+            Sign up
+          </button>
         </form>
-
-        {/* Toggle between sign-up and login */}
-        <div className="text-center mt-4">
-          <p className="text-gray-600">
-            Already have an account?
-            <button
-              onClick={toggleForms}
-              className="text-blue-500 underline ml-2 focus:outline-none"
-            >
-              Log in
-            </button>
-          </p>
-        </div>
+      </div>
+      {/* Log in section */}
+      <div className="w-1/2 h-full bg-primaryColor rounded-r-lg flex flex-col justify-center items-center rounded-lg mx-2">
+        <h2 className="text-2xl font-semibold text-white">Log in</h2>
+        <button className="text-white mt-4" onClick={toggleForms}>
+          Already a member? Log in
+        </button>
       </div>
     </div>
   );
