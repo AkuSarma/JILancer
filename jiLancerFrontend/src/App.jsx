@@ -12,12 +12,8 @@ import  { useEffect, useState } from "react";
 
 
 import AuthContainer from './pages/AuthContainer';
-<<<<<<< HEAD
 import RoleIdentifier from './components/RoleIdentifier';
-=======
-import RoleIdentifier from './pages/RoleIdentifier';
 import IncomeChart from './components/Dashboard_Profile/IncomeChart';
->>>>>>> cdf1c99cde92fab72e7dc80e73d05b6b2d21cbb4
 
 function App() {
   const [user, setUser] = useState(null);
