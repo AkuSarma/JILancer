@@ -8,6 +8,10 @@ import Contact from './pages/Contact';
 import axios from "axios";
 import  { useEffect, useState } from "react";
 import Dashbards from './components/Dashboard/Dashboards'
+import FreelancerForm from './components/FreelancerForm';
+import FreelancerList from './components/FreelancerList';
+import EmployerList from './components/EmployerList';
+import EmployerForm from './components/EmployerForm';
 
 
 
@@ -60,6 +64,16 @@ function App() {
             <Route path="*" element={<NoPage user={user} />} />
             <Route path='/dashboard' element={<Dashbards/> }/>
             <Route path='/ProjectList' element={<ProjectList/>} />
+            <Route path="/role" element={<RoleIdentifier />} />
+
+            <Route path="*" element={<NoPage user={user} />} />
+
+            <Route path="/freelancers" element={<FreelancerList />} />
+            <Route path="/freelancers/create" element={<FreelancerForm />} />
+            <Route path="/freelancers/edit/:id" element={<FreelancerForm />} />
+            <Route path="/employers" element={<EmployerList />} />
+            <Route path="/employers/create" element={<EmployerForm />} />
+            <Route path="/employers/edit/:id" element={<EmployerForm />} />
           </Route>
         </Routes>
       </BrowserRouter>

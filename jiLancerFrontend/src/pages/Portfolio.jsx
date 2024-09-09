@@ -8,6 +8,9 @@ social media links
 skill
 projects
 completed work
+certifications
+achievements
+languages
 
 Employer
 ================
