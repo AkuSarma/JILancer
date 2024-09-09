@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Dashbards from "./components/Dashboard/Dashboards";
-import FreelancerForm from "./components/FreelancerForm";
 import FreelancerList from "./components/FreelancerList";
 import EmployerList from "./components/EmployerList";
 import EmployerForm from "./components/EmployerForm";

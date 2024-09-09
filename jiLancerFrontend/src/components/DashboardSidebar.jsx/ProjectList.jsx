@@ -66,7 +66,7 @@ const projects = [
 const ProjectList = () => {
   return (
     <div>
-    <div className="bg-white p-6 rounded-lg shadow-lg w-full my-5 h-screen ">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-full my-5 h-fit ">
       <h2 className="text-2xl font-bold mb-4">Your Projects</h2>
       <ul>
         {projects.map((project) => (
