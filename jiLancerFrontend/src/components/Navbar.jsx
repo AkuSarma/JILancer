@@ -2,14 +2,7 @@ import { Link } from "react-router-dom";
 import Logout from "./logout";
 
 
-const Navbar = (props) => {
-  const {user} = props
-  // const navigate = useNavigate;
-
-  // const sumbit = (e) =>{
-  //   e.preventDefault();
-  //   navigate('/Auth')
-  // }
+const Navbar = ({user}) => {
   return (
     <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl">
       <div className="flex items-center space-x-4">
@@ -33,10 +26,10 @@ const Navbar = (props) => {
       </div>
       <div className="flex space-x-4">
         <button className="text-white hover:text-gray-800">
-          {user ? <span> user </span> : <Link to="/Auth">Login</Link>}
+          {user ? <span> {user} </span> : <Link to="/Auth">Login</Link>}
         </button>
+        <Logout/>
       </div>
-          <Logout />
     </div>
   );
 }

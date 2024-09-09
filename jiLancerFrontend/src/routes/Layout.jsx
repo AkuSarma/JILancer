@@ -3,12 +3,11 @@ import PropTypes from "prop-types"; // Import PropTypes
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const Layout = (props) => {
-  const { user } = props; 
+const Layout = ({user}) => {
   return (
     <>
       <Navbar user={user} />
-      <Outlet user={user} />
+      <Outlet />
       <Footer />
     </>
   );
