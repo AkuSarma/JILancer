@@ -5,14 +5,19 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import NoPage from './pages/NoPage';
 import Contact from './pages/Contact';
-import Dashboard from './pages/Dashboard'
 import axios from "axios";
 import  { useEffect, useState } from "react";
+import Dashbards from './components/Dashboard/Dashboards'
+import FreelancerForm from './components/FreelancerForm';
+import FreelancerList from './components/FreelancerList';
+import EmployerList from './components/EmployerList';
+import EmployerForm from './components/EmployerForm';
 
 
 
 import AuthContainer from './pages/AuthContainer';
-import RoleIdentifier from './pages/RoleIdentifier';
+import RoleIdentifier from './components/RoleIdentifier';
+import ProjectList from './components/DashboardSidebar.jsx/ProjectList';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -55,9 +60,20 @@ function App() {
             <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/contact" element={<Contact user={user} />} />
             <Route path="/Auth" element={<AuthContainer />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path='/role' element ={<RoleIdentifier />}/>
             <Route path="*" element={<NoPage user={user} />} />
+            <Route path='/dashboard' element={<Dashbards/> }/>
+            <Route path='/ProjectList' element={<ProjectList/>} />
+            <Route path="/role" element={<RoleIdentifier />} />
+
+            <Route path="*" element={<NoPage user={user} />} />
+
+            <Route path="/freelancers" element={<FreelancerList />} />
+            <Route path="/freelancers/create" element={<FreelancerForm />} />
+            <Route path="/freelancers/edit/:id" element={<FreelancerForm />} />
+            <Route path="/employers" element={<EmployerList />} />
+            <Route path="/employers/create" element={<EmployerForm />} />
+            <Route path="/employers/edit/:id" element={<EmployerForm />} />
           </Route>
         </Routes>
       </BrowserRouter>
