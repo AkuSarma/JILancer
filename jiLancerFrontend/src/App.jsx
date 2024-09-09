@@ -17,6 +17,7 @@ import AuthContainer from "./pages/AuthContainer";
 import RoleIdentifier from "./components/RoleIdentifier";
 import ProjectList from "./components/DashboardSidebar.jsx/ProjectList";
 import ProjectOfList from "./components/DashboardSidebar.jsx/NewProject";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -64,6 +65,7 @@ function App() {
             <Route path="/dashboard" element={<Dashbards />} />
             <Route path="/ProjectList" element={<ProjectList />} />
             <Route path="/role" element={<RoleIdentifier />} />
+            <Route path="/portfolio" element={<Portfolio/>} />
 
             <Route path="*" element={<NoPage user={user} />} />
 
