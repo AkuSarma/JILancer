@@ -1,6 +1,6 @@
 const ProjectsOverview = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white p-6 rounded-lg shadow-md h-[50%]">
       <div className="flex justify-between">
         <div className="text-center">
           <h3 className="text-lg">Rank</h3>
