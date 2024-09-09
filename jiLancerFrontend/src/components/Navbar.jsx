@@ -17,8 +17,8 @@ const Navbar = ({user}) => {
         <Link to="/" class="hover:text-white">
           Home
         </Link>
-        <Link to="/Dashboard" class="hover:text-white">
-          Profile
+        <Link to="/portfolio" class="hover:text-white">
+          Portfolio
         </Link>
         <Link to="/contact" class="hover:text-white">
           Contact
