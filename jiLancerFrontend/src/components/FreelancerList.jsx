@@ -1,63 +1,62 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import React from "react";
+
+const mockFreelancers = [
+  {
+    id: 1,
+    name: "John Doe",
+    image: "https://via.placeholder.com/150",
+    rating: 4.5,
+    bio: "Experienced web developer with a passion for coding.",
+    skills: "JavaScript, React, Node.js",
+    certifications: "Certified React Developer",
+    achievements: "Built top-rated app",
+    languages: "English, Spanish",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    image: "https://via.placeholder.com/150",
+    rating: 4.7,
+    bio: "UI/UX designer with a focus on user-centered design.",
+    skills: "Adobe XD, Figma, Sketch",
+    certifications: "Certified UX Designer",
+    achievements: "Designed award-winning website",
+    languages: "English, French",
+  },
+];
 
 const FreelancerList = () => {
-  const [freelancers, setFreelancers] = useState([]);
-
-  useEffect(() => {
-    const fetchFreelancers = async () => {
-      try {
-        const response = await axios.get("/portfolio/freelancers/");
-        setFreelancers(response.data);
-      } catch (error) {
-        console.error("There was an error fetching freelancers!", error);
-      }
-    };
-    fetchFreelancers();
-  }, []);
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`/portfolio/freelancers/${id}/delete/`);
-      setFreelancers(freelancers.filter((freelancer) => freelancer.id !== id));
-    } catch (error) {
-      console.error("There was an error deleting the freelancer!", error);
-    }
-  };
-
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Freelancer List</h1>
-      <Link
-        to="/freelancers/create"
-        className="inline-block bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-      >
-        Add New Freelancer
-      </Link>
-      <ul>
-        {freelancers.map((freelancer) => (
-          <li
-            key={freelancer.id}
-            className="flex items-center justify-between p-4 border border-gray-200 rounded-md"
-          >
-            <div>
-              <h2 className="text-xl font-semibold">{freelancer.name}</h2>
-              <p>{freelancer.bio}</p>
-            </div>
-            <div>
-              <Link
-                to={`/freelancers/edit/${freelancer.id}`}
-                className="mr-2 bg-yellow-500 text-white p-2 rounded-md hover:bg-yellow-600"
-              >
-                Edit
-              </Link>
-              <button
-                onClick={() => handleDelete(freelancer.id)}
-                className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600"
-              >
-                Delete
-              </button>
+    <div>
+      <h1 className="text-xl font-semibold">Freelancers</h1>
+      <ul className="space-y-4">
+        {mockFreelancers.map((freelancer) => (
+          <li key={freelancer.id} className="p-4 border rounded-md shadow-sm">
+            <div className="flex items-center space-x-4">
+              <img
+                src={freelancer.image}
+                alt={freelancer.name}
+                className="w-16 h-16 rounded-full"
+              />
+              <div>
+                <h2 className="text-lg font-medium">{freelancer.name}</h2>
+                <p className="text-sm text-gray-600">
+                  Rating: {freelancer.rating}
+                </p>
+                <p className="text-sm mt-2">{freelancer.bio}</p>
+                <p className="mt-2">
+                  <strong>Skills:</strong> {freelancer.skills}
+                </p>
+                <p className="mt-2">
+                  <strong>Certifications:</strong> {freelancer.certifications}
+                </p>
+                <p className="mt-2">
+                  <strong>Achievements:</strong> {freelancer.achievements}
+                </p>
+                <p className="mt-2">
+                  <strong>Languages:</strong> {freelancer.languages}
+                </p>
+              </div>
             </div>
           </li>
         ))}

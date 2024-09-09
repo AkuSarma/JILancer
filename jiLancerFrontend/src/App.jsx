@@ -68,13 +68,15 @@ function App() {
             <Route path="*" element={<NoPage user={user} />} />
 
             <Route path="/freelancers" element={<FreelancerList />} />
-            <Route path="/freelancers/create" element={<FreelancerForm />} />
-            <Route path="/freelancers/edit/:id" element={<FreelancerForm />} />
+            {/* <Route path="/freelancers/create" element={<FreelancerForm />} /> */}
+            {/* <Route path="/freelancers/edit/:id" element={<FreelancerForm />} /> */}
             <Route path="/employers" element={<EmployerList />} />
             <Route path="/employers/create" element={<EmployerForm />} />
             <Route path="/employers/edit/:id" element={<EmployerForm />} />
             <Route path="/NewProject" element={<ProjectOfList />} />
 
+            {/* <Route path="/employers/create" element={<EmployerForm />} /> */}
+            {/* <Route path="/employers/edit/:id" element={<EmployerForm />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
