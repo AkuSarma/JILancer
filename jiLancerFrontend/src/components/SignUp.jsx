@@ -39,7 +39,7 @@ const SignUp = ({ toggleForms }) => {
           </p>
           {loading ? (
             <div className="flex justify-center items-center h-full">
-              <RingLoader size={60} color={"#3498db"} loading={loading} />
+              <RingLoader size={60} color={"#9CA986"} loading={loading} />
             </div>
           ) : (
             <form className="space-y-4">

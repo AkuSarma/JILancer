@@ -46,7 +46,7 @@ const RoleIdentifier = ({username, email, password, setDetails}) => {
     <>
       {loading ? (
         <div className="flex justify-center items-center h-full">
-          <RingLoader size={60} color={"#3498db"} loading={loading} />
+          <RingLoader size={60} color={"#9CA986"} loading={loading} />
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
