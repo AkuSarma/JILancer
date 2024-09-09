@@ -1,5 +1,36 @@
+import Sidebar from "../Dashboard/sidebar";
 
 const projects = [
+  {
+    id: 1,
+    title: 'Food Web App Design',
+    deadline: '2 days remaining',
+    status: 'In Progress',
+  },
+  {
+    id: 2,
+    title: 'Personal Website Design',
+    deadline: '4 days remaining',
+    status: 'Not Started',
+  },
+  {
+    id: 3,
+    title: 'E-commerce Platform',
+    deadline: '5 days remaining',
+    status: 'In Progress',
+  },
+  {
+    id: 4,
+    title: 'Social Media App Development',
+    deadline: '1 day remaining',
+    status: 'In Progress',
+  },
+  {
+    id: 5,
+    title: 'Blog Website Redesign',
+    deadline: '7 days remaining',
+    status: 'Completed',
+  },
   {
     id: 1,
     title: 'Food Web App Design',
@@ -34,7 +65,8 @@ const projects = [
 
 const ProjectList = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg w-full">
+    <div>
+    <div className="bg-white p-6 rounded-lg shadow-lg w-full my-5 h-screen ">
       <h2 className="text-2xl font-bold mb-4">Your Projects</h2>
       <ul>
         {projects.map((project) => (
@@ -51,6 +83,8 @@ const ProjectList = () => {
           </li>
         ))}
       </ul>
+    </div>
+    <Sidebar/>
     </div>
   );
 };

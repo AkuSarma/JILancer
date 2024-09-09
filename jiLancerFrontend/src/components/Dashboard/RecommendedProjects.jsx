@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 
 const RecommendedProjects = () => {
+
+    const navigate = useNavigate();
+    const ListOfProject = () => {
+        navigate('/NewProject')
+    }
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-lg font-bold">Recommended Projects</h2>
@@ -14,8 +20,10 @@ const RecommendedProjects = () => {
             <p className="text-xs">Part time</p>
           </div>
         </div>
-        <div className="flex items-end justify-end">
-        <a href="#"
+        <div className="flex items-end justify-end mt-1">
+        <a 
+        onClick={ListOfProject}
+        className="border-b-2 border-black cursor-pointer"
         >See all</a>
         </div>
         
