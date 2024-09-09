@@ -7,10 +7,9 @@ const Home = () => {
         {/* left card */}
         <div className="h-auto w-auto border- rounded-[1.5em] bg-primaryColor to-lime200 text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px] ">
           <div className="px-2 py-2">
-            <h1 className="text-[2em] font-medium">Heading</h1>
+            <h1 className="text-[2em] font-medium">Get Hired for Your Next Gig </h1>
             <p className="text-[0.85em]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              dolorum blanditiis pariatur sequi magni.
+              Connecting Skilled Freelancers with Companies Ready to Innovate
             </p>
           </div>
           <button className=" h-fit w-fit px-[1em] py-[0.25em] border-[1px] rounded-full flex justify-center items-center gap-[1em] overflow-hidden group hover:translate-y-[0.125em] duration-200 backdrop-blur-[12px]">
