@@ -19,31 +19,6 @@ const SignUp = ({ toggleForms }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Start loading
-    console.log("trying to submit")
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/user_authentication/register/",
-        {
-          username,
-          email,
-          password,
-          is_freelancer: isFreelancer,
-        }
-      );
-      setDetails(false);
-      setLoading(true);
-      console.log("Registration successful:", response.data);
-      navigate("/Auth");
-    } catch (error) {
-      console.error("Error during registration:", error);
-    } finally {
-      setLoading(false); // Stop loading when done
-    }
-  };
-
   if (details) {
     return (
       <RoleIdentifier
@@ -67,7 +42,7 @@ const SignUp = ({ toggleForms }) => {
               <RingLoader size={60} color={"#3498db"} loading={loading} />
             </div>
           ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4">
               <input
                 type="text"
                 placeholder="Username"
