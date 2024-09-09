@@ -12,14 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@material-tailwind/react": "^2.1.10",
     "@mui/material": "^6.0.2",
     "axios": "^1.7.7",
     "chart.js": "^4.4.4",
-    "axios": "^1.7.7",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.1",
     "udta-punjab-karega-kaam": "file:"
   },
