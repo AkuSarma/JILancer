@@ -5,9 +5,9 @@ const Home = () => {
     <div className=" ">
       <div className="flex justify-between space-x-5 my-5">
         {/* Left Div */}
-        <div className="flex flex-col w-[65%] space-y-5">
+        <div className="flex flex-col w-[65%] space-y-5 h-[40rem]">
           {/* Left Main Card */} 
-          <div className="h-auto w-auto border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
+          <div className="h-[60%] w-auto border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
             <div className="px-2 py-2">
               <h1 className="text-[2em] font-medium">Get Hired for Your Next Gig</h1>
               <p className="text-[0.85em]">
@@ -34,8 +34,8 @@ const Home = () => {
           </div>
 
           {/* Below Cards (Merged with Left) */}
-          <div className="flex space-x-5">
-            <div className="h-[16em] w-[18em] border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
+          <div className="flex space-x-5 h-[40%]">
+            <div className="h-full w-[18em] border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
               <div className="px-2 py-2">
                 <h1 className="text-[2em] font-medium">Heading 1</h1>
                 <p className="text-[0.85em]">
@@ -61,7 +61,7 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="h-[16em] w-[18em] border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
+            <div className="h-full w-[18em] border- rounded-[1.5em] bg-primaryColor text-black font-nunito p-[1em] flex justify-center items-left flex-col gap-[0.75em] backdrop-blur-[12px]">
               <div className="px-2 py-2">
                 <h1 className="text-[2em] font-medium">Heading 2</h1>
                 <p className="text-[0.85em]">
@@ -128,14 +128,14 @@ const Home = () => {
               >
                 <path
                   d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                ></path>
-              </svg>
-            </a>
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  ></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
       {/* BelowHomePage Component */}
       <BelowHomePage />
