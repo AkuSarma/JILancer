@@ -33,5 +33,4 @@ const Navbar = ({user}) => {
     </div>
   );
 }
-
 export default Navbar
