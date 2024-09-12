@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logout from "./logout";
-
+import PropTypes from "prop-types";
 
 const Navbar = ({user}) => {
   return (
@@ -33,4 +33,7 @@ const Navbar = ({user}) => {
     </div>
   );
 }
+Navbar.propTypes = {
+  user: PropTypes.string
+};
 export default Navbar
