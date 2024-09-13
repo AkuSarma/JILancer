@@ -8,6 +8,7 @@ export default {
         backgroundColor: "#C9DABF",
         secondaryColor: "#808D7C",
         lastColor: "#5F6F65",
+        CustomGray: '#D9D9D9',
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
