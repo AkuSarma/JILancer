@@ -5,7 +5,7 @@ const Home = () => {
     <div className=" ">
       <div className="flex justify-between space-x-5 my-5">
         {/* Left Div */}
-        <div className="flex flex-col w-[50%] space-y-5 h-[30rem]">
+        <div className="flex flex-col w-[50%] space-y-5 h-[32rem]">
           {/* Left Main Card */} 
           <a
             href="https://link-to-your-page.com" 
@@ -58,7 +58,7 @@ const Home = () => {
         </div>
 
         {/* Right Div */}
-        <div className="relative w-[50%] h-[30rem] rounded-[30px] bg-lastColor overflow-hidden flex flex-col justify-between group transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <div className="relative w-[50%] h-[32rem] rounded-[30px] bg-lastColor overflow-hidden flex flex-col justify-between group transition-transform duration-300 hover:scale-105 hover:shadow-lg">
           <video
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
