@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Navbar = ({user}) => {
   return (
-    <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl">
+    <div className="bg-primaryColor px-6 py-3 flex items-center justify-between rounded-xl h-[3rem] ">
       <div className="flex items-center space-x-4">
         <span className="font-bold text-lg text-white">logo</span>
         <input
