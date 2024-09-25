@@ -8,6 +8,10 @@ export default {
         backgroundColor: "#C9DABF",
         secondaryColor: "#808D7C",
         lastColor: "#5F6F65",
+        CustomGray: '#D9D9D9',
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out',
@@ -22,4 +26,3 @@ export default {
   },
   plugins: [],
 };
-
