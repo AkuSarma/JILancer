@@ -2,7 +2,7 @@ import BelowHomePage from '../pages/BelowHomePage';
 
 const Home = () => {
   return (
-    <div className=" ">
+    <div className="">
       <div className="flex justify-between space-x-5 my-5">
         {/* Left Div */}
         <div className="flex flex-col w-[50%] space-y-5 h-[32rem]">
