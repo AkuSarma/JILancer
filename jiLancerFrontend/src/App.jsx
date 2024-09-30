@@ -17,6 +17,7 @@ import RoleIdentifier from "./components/RoleIdentifier";
 import ProjectList from "./components/DashboardSidebar.jsx/ProjectList";
 import ProjectOfList from "./components/DashboardSidebar.jsx/NewProject";
 import Portfolio from "./pages/Portfolio";
+import Blog from "./pages/Blog";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -78,6 +79,8 @@ function App() {
 
             {/* <Route path="/employers/create" element={<EmployerForm />} /> */}
             {/* <Route path="/employers/edit/:id" element={<EmployerForm />} /> */}
+
+            <Route path="/blog" element={<Blog />} />
           </Route>
         </Routes>
       </BrowserRouter>
