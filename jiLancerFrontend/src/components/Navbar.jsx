@@ -45,6 +45,9 @@ const Navbar = ({ user }) => {
         <Link to="/" className="hover:text-white">
           Home
         </Link>
+        <Link to="/Blog" className="hover:text-white">
+          Blog
+        </Link>
         <Link to="/portfolio" className="hover:text-white">
           Portfolio
         </Link>
